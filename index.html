@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rhea's Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #intro {
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    h1 {
+      font-size: 3em;
+      color: #343a40;
+    }
+    p {
+      font-size: 1.2em;
+      color: #6c757d;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+      display: inline-table;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .about-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 600px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    #extra-info {
+      display: none;
+      margin-top: 1rem;
+      color: #666;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      padding: 2rem;
+    }
+    .contact-me {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .contact-me h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .info {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+    .info span {
+      font-weight: bold;
+    }
+    .actions {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .actions button {
+      padding: 0.7rem 1.2rem;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .actions button:hover {
+      background-color: #0056b3;
+    }
+    .copied-message {
+      text-align: center;
+      color: green;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  </style>
+</head>
+<body>
+  </style>
+</head>
+<body>
+
+  <div id="intro">
+    <h1 id="greeting">Hello!</h1>
+    <p>Hi, I'm Rhea D. Hoyohoy. I’m glad you’re here.</p>
+  </div>
+
+  <div class="about-container">
+    <h1>About Me</h1>
+    <p>Hey there! I'm Rhea D. Hoyohoy, a creative soul who loves coding, music, and bringing ideas to life.</p>
+    <button onclick="toggleExtra()">Show More</button>
+    <div id="extra-info">
+      <p>I’m passionate about building web apps and learning new things. Always curious, always evolving!</p>
+    </div>
+  </div>
+
+  <div class="projects">
+    <h1>Projects</h1>
+    <p>Website about Tourist attraction in Sibulan.</p>
+    <a href="C:\Users\COMPLAB2\Desktop\HOYOHOY\Hoyohoy-vite\src\assets\bans.png">click here</a>
+  </div>
+   
+  <div class="contact-me">
+    <h2>Contact Me</h2>
+    <div class="info"><span>Email:</span> <span id="email">rdhoyohoy.student@asiancollege.edu.ph</span></div>
+    <div class="info"><span>Phone:</span> 09958587657</div>
+    
+    <div class="actions">
+      <button onclick="copyEmail()">Copy Email</button>
+      <button onclick="sendEmail()">Send Email</button>
+    </div>
+
+    <div id="copied" class="copied-message"></div>
+  </div>
+
+  <script>
+    function copyEmail() {
+      const email = document.getElementById("email").textContent;
+      navigator.clipboard.writeText(email).then(() => {
+        document.getElementById("copied").textContent = "Email copied to clipboard!";
+      });
+    }
+
+    function sendEmail() {
+      const email = document.getElementById("email").textContent;
+      window.location.href = `mailto:${email}`;
+    }
+  </script>
+
+  <script>
+    function toggleExtra() {
+      const extra = document.getElementById("extra-info");
+      extra.style.display = extra.style.display === "none" ? "block" : "none";
+    }
+  </script>
+
+  <script>
+    const greetingElement = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    let greetingText = "Hello!";
+
+    if (hour < 12) {
+      greetingText = "Good morning!";
+    } else if (hour < 18) {
+      greetingText = "Good afternoon!";
+    } else {
+      greetingText = "Good evening!";
+    }
+
+    greetingElement.textContent = greetingText;
+  </script>
+</body>
+</html>
